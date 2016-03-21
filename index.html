@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app="moviedb">
+<html ng-app="moviedb" ng-controller="AppController">
 <head>
 	<meta charset="UTF-8">
-	<title>Movie DB</title>
+	<title> {{model.title}}</title>
 	<link rel="stylesheet" type="text/css" href="dist/style.css">
 </head>
 <body>
@@ -15,19 +15,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Movie DB</a>
+                <a class="navbar-brand" href="#/">Movie DB</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li ng-class="getClassForItem('movies')">
-                        <a href="#" ng-click="setSelectedItem('movies')">Movies</a>
+                        <a href="#/movies" ng-click="setSelectedItem('movies')">Movies</a>
                     </li>
                     <li ng-class="getClassForItem('series')">
-                        <a href="#" ng-click="setSelectedItem('series')">Series</a>
+                        <a href="#/series" ng-click="setSelectedItem('series')">Series</a>
                     </li>
                     <li ng-class="getClassForItem('people')">
-                        <a href="#" ng-click="setSelectedItem('people')">People</a>
+                        <a href="#/people" ng-click="setSelectedItem('people')">People</a>
                     </li>
                 </ul>
             </div>
@@ -36,6 +36,13 @@
         <!-- /.container-fluid -->
         Selected item: {{ model.selectedItem }}
     </nav>
+    <div class="container">
+    	 <div class="row">
+    	 	<div class="col-xs-12">
+    	 		<div ng-view></div>
+    	 	</div>
+    	 </div>
+    </div>
     <script src="dist/app.js"></script>
 </body>
 </html>

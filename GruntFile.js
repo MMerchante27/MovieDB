@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -14,6 +14,7 @@ module.exports = function (grunt) {
             app: {
                 src: [
                     'bower_components/angular/angular.js',
+                    'bower_components/angular-route/angular-route.js',
                     'scripts/**/*.js',
                     'scripts/*.js'
                 ],
