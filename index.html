@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html ng-app>
-
+<html ng-app="moviedb">
 <head>
-    <title>Movie DB</title>
+	<meta charset="UTF-8">
+	<title>Movie DB</title>
+	<link rel="stylesheet" type="text/css" href="dist/style.css">
 </head>
-
 <body>
-    <input type="text" placeholder="Nombre" ng-model="name">
-    <button ng-click="name=''">Reset</button>
-    <div>Hello {{name}}</div>
-    <h1 ng-if="name=='Miriam'">You rock!</h1>
-    <script src="bower_components/angular/angular.js"></script>
+	<nav class="navbar navbar-default" ng-controller="MenuController">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Movie DB</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li ng-class="getClassForItem('movies')">
+                        <a href="#" ng-click="setSelectedItem('movies')">Movies</a>
+                    </li>
+                    <li ng-class="getClassForItem('series')">
+                        <a href="#" ng-click="setSelectedItem('series')">Series</a>
+                    </li>
+                    <li ng-class="getClassForItem('people')">
+                        <a href="#" ng-click="setSelectedItem('people')">People</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+        Selected item: {{ model.selectedItem }}
+    </nav>
+    <script src="dist/app.js"></script>
 </body>
-
 </html>
