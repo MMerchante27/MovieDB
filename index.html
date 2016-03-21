@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <title>Movie DB</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Nombre" ng-model="name">
+    <button ng-click="name=''">Reset</button>
+    <div>Hello {{name}}</div>
+    <h1 ng-if="name=='Miriam'">You rock!</h1>
+    <script src="bower_components/angular/angular.js"></script>
+</body>
+
+</html>
