@@ -4,6 +4,13 @@
     <div class="jumbotron" ng-show="uiState=='blank'">
         <p class="lead">No data here</p>
     </div>
+    <div class="alert alert-danger" ng-show="uiState == 'error'">
+        Error while loading data
+    </div>
+    <div class="progress" ng-show="uiState == 'loading'">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+        </div>
+    </div>
     <table class="table table-striped" ng-show="uiState=='ideal'">
         <thead>
             <tr>
