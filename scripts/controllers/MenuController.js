@@ -1,5 +1,5 @@
 angular.module("moviedb").controller("MenuController", 	
-	["$scope", function($scope) {
+	["$scope", "$location", function($scope, $location) {
 
 		//Scope init
 		$scope.model = {
@@ -21,10 +21,8 @@ angular.module("moviedb").controller("MenuController",
 
 		//Scope Watchers
 
-		$scope.$watch("model.selectedItem", function(newValue, oldValue){ //Cuando cambie el atributo selectedItem, ocurre esto
-			//Emitimos un evento para que se entere AppController
-			//de que ha cambiado la opción del menú seleccionada
-			$scope.$emit("OnMenuChange", newValue);
+		$scope.$on("$locationChangeSuccess",function(evt, currentRoute){ //.$on capturar evento 
+			$scope.model.selectedItem = $location.path();
 		});
 
 	}]
