@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="moviedb" ng-controller="AppController">
+
 <head>
-	<meta charset="UTF-8">
-	<title> {{model.title}}</title>
-	<link rel="stylesheet" type="text/css" href="dist/style.css">
+    <meta charset="UTF-8">
+    <title> {{model.title}}</title>
+    <link rel="stylesheet" type="text/css" href="dist/style.css">
 </head>
+
 <body>
-	<nav class="navbar navbar-default" ng-controller="MenuController">
+    <nav class="navbar navbar-default" ng-controller="MenuController">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -20,14 +22,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li ng-class="getClassForItem('movies')">
-                        <a href="#/movies" ng-click="setSelectedItem('movies')">Movies</a>
+                    <li ng-class="getClassForItem('/movies')">
+                        <a href="#/movies">Movies</a>
                     </li>
-                    <li ng-class="getClassForItem('series')">
-                        <a href="#/series" ng-click="setSelectedItem('series')">Series</a>
+                    <li ng-class="getClassForItem('/series')">
+                        <a href="#/series">Series</a>
                     </li>
-                    <li ng-class="getClassForItem('people')">
-                        <a href="#/people" ng-click="setSelectedItem('people')">People</a>
+                    <li ng-class="getClassForItem('/people')">
+                        <a href="#/people">People</a>
                     </li>
                 </ul>
             </div>
@@ -37,12 +39,13 @@
         Selected item: {{ model.selectedItem }}
     </nav>
     <div class="container">
-    	 <div class="row">
-    	 	<div class="col-xs-12">
-    	 		<div ng-view></div>
-    	 	</div>
-    	 </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-view></div>
+            </div>
+        </div>
     </div>
     <script src="dist/app.js"></script>
 </body>
+
 </html>
