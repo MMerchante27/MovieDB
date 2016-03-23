@@ -30,9 +30,11 @@
                 </td>
                 <td>
                     {{::item.release_date | date:"dd/MM/yyyy"}}
+                    <br> ({{::item.release_date | ago }})
                 </td>
                 <td>
                     {{::item.rating}}
+                    <br> ({{::item.rating | schoolrating:"US"}})
                 </td>
             </tr>
         </tbody>
