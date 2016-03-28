@@ -1,4 +1,5 @@
-angular.module("moviedb").controller("MovieDetailController", ["$scope", "$routeParams", "$location", "MovieService", "paths", function($scope, $routeParams, $location, MovieService, paths) {
+angular.module("moviedb").controller("MovieDetailController", ["$scope", "$routeParams", "$location", "APIClient", "paths", 
+    function($scope, $routeParams, $location, APIClient, paths) {
 
     // Scope init
     $scope.model = {};
@@ -7,7 +8,7 @@ angular.module("moviedb").controller("MovieDetailController", ["$scope", "$route
     //Controller init
     $scope.$emit("ChangeTitle","Loading...");
 
-    MovieService.getMovie($routeParams.id).then(
+    APIClient.getMovie($routeParams.id).then(
         //Película  encontrada
         function(movie) {
             $scope.model = movie;
