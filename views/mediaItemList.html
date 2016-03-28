@@ -24,7 +24,7 @@
                 {{::item.rating}} ({{::item.rating | schoolrating:"US"}})
             </td>
             <td>
-                <a href="#{{::getDetailUrl(item)}}" class="btn btn-default"> View</a>
+                <a href="#{{::getDetailUrl({stuff:item})}}" class="btn btn-default"> View</a>
             </td>
         </tr>
     </tbody>
