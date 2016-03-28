@@ -5,11 +5,13 @@
             <th>Title</th>
             <th>Year</th>
             <th>Rating</th>
-            <th></th>
+            <th>
+                <input type="search" ng-model="query.title" placeholder="Search..." class="form-control">
+            </th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in model">
+        <tr ng-repeat="item in model | filter:query" >
             <td>
                 <img ng-src="{{::item.poster_url}}" alt="{{::item.title}}'s poster" title=" {{::item.title}}" width="140">
             </td>
