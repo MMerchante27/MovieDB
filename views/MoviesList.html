@@ -9,36 +9,5 @@
     </div>
     <div ng-include="'views/ProgressBar.html'" ng-show="uiState == 'loading'">
     </div>
-    <table class="table table-striped" ng-show="uiState=='ideal'">
-        <thead>
-            <tr>
-                <th>Poster</th>
-                <th>Title</th>
-                <th>Year</th>
-                <th>Rating</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="item in model">
-                <td>
-                    <img ng-src="{{::item.poster_url}}" alt="{{::item.title}}'s poster" title=" {{::item.title}}" width="180">
-                </td>
-                <td>
-                    {{::item.title}}
-                </td>
-                <td>
-                    {{::item.release_date | date:"dd/MM/yyyy"}}
-                    <br> ({{::item.release_date | ago }})
-                </td>
-                <td>
-                    {{::item.rating}}
-                    ({{::item.rating | schoolrating:"US"}})
-                </td>
-                <td>
-                    <a href="#{{::getMovieDetailURL(item)}}" class="btn btn-default"> View</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <media-item-list items="model" get-detail-url="getMovieDetailURL"ng-show="uiState=='ideal'"></media-item-list>
 </div>
