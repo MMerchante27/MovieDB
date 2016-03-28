@@ -1,3 +1,13 @@
 <div ng-controller="SeriesListController">
-	<h1>Series</h1>
+    <h1>Series</h1>
+    <button ng-click="model=[]">Delete all</button>
+    <div class="jumbotron" ng-show="uiState=='blank'">
+        <p class="lead">No data here</p>
+    </div>
+    <div class="alert alert-danger" ng-show="uiState == 'error'">
+        Error while loading data
+    </div>
+    <div ng-include="'views/ProgressBar.html'" ng-show="uiState == 'loading'">
+    </div>
+    <media-item-list items="model" get-detail-url="getSerieDetailURL(stuff)" ng-show="uiState=='ideal'"></media-item-list>
 </div>

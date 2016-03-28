@@ -9,9 +9,7 @@ angular.module("moviedb").controller("MenuController",
 		$scope.paths = paths;
 
 		//Scope methods
-		$scope.setSelectedItem = function(item){
-			$scope.model.selectedItem = item;
-		};
+		
 
 		$scope.getClassForItem = function(item){
 			if($scope.model.selectedItem == item){
